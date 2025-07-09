@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  https://fonts.googleapis.com/css2?family=Roboto&display=swap
+  <style>
+   #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#preloader-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loader--hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+
+  </style>
+</head>
+<body>
+    <!-- Preloader -->
+<div id="preloader">
+  <video autoplay muted loop id="preloader-video">
+    <source src="zoro.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+  <header>
+    <div class="container">
+      <h1>Contact Me</h1>
+      <nav>
+        <a href="home.html">Home</a>
+       .html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="contact-form">
+        <h2>Get in Touch</h2>
+        <form id="contactform">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+
+          <label for="subject">Subject:</label>
+                   <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+
+          <button type="button" onclick="validateContactForm()">Submit</button>
+        </form>
+        <p id="feedback" style="color:red;"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <script>
+    function validateContactForm() {
+      const form = document.getElementById('contactform');
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+      const feedback = document.getElementById("feedback");
+
+      feedback.innerText = "";
+      feedback.style.color = "red";
+
+      let valid = true;
+
+      [name, email, subject, message].forEach(field => {
+        field.classList.remove("error");
+        if (field.value.trim() === "") {
+          field.classList.add("error");
+          valid = false;
+        }
+      });
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        email.classList.add("error");
+        feedback.innerText = "Please enter a valid email address.";
+        return;
+      }
+
+      if (!valid) {
+        feedback.innerText = "Please fill out all fields.";
+        return;
+      }
+
+      // ✅ Submit to Google Sheets
+      const scriptURL = "YOUR_WEB_APP_URL_HERE"; // Replace with your actual URL
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      })
+      .then(res => res.text())
+      .then(response => {
+        if (response === "Success") {
+          feedback.style.color = "green";
+          feedback.innerText = "Your message has been sent!";
+          form.reset();
+        } else {
+          feedback.innerText = "Submission failed: " + response;
+        }
+      })
+      .catch(error => {
+        feedback.innerText = "Error sending message.";
+        console.error("Error!", error.message);
+      });
+    }
+    window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("loader--hidden");
+
+    preloader.addEventListener("transitionend", () => {
+      preloader.remove();
+    });
+  }, 900); // 2 seconds
+});
+
+
+  </script>
+</body>
+</html>

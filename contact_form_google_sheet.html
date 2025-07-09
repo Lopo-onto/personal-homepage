@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Contact Form</title> 
+  <style> 
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 20px; 
+      background-color: #f4f4f4; 
+    } 
+    form { 
+      background: #fff; 
+      padding: 20px; 
+      max-width: 400px; 
+      margin: auto; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    } 
+    input, textarea { 
+      width: 100%; 
+      padding: 10px; 
+      margin-top: 10px; 
+      margin-bottom: 20px; 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+    } 
+    button { 
+      background-color: #007BFF; 
+      color: white; 
+      padding: 10px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+    } 
+    .success { 
+      color: green; 
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+  <h2>Contact Me</h2> 
+  <form id="contact-form"> 
+    <label>Name:</label> 
+    <input type="text" name="name" required> 
+     
+    <label>Email:</label> 
+    <input type="email" name="email" required> 
+     
+    <label>Message:</label> 
+    <textarea name="message" rows="5" required></textarea> 
+     
+    <button type="submit">Send</button> 
+    <p class="success" id="response"></p> 
+  </form> 
+ 
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxq2B7Gm9bFdSIR9uvj3Lc00a3MRtvZaI6J8xJ_8jkUAFfUj1aTCnf97pI7YB_4kE6p/exec";
+    const form = document.getElementById("contact-form");
+    const responseMsg = document.getElementById("response");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        responseMsg.textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(error => {
+        responseMsg.textContent = "Error sending message.";
+        console.error("Error!", error.message);
+      });
+    });
+  </script>
+</body> 
+</html> 

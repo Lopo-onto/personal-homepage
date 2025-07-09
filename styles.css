@@ -1,0 +1,100 @@
+body{
+	background-image: url("https://th.bing.com/th/id/R.3a1860df5a72d5d6b98686da9b896626?rik=8r%2bj%2b6DVrhHhcQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fMGcyCNT.jpg&ehk=wmPapweYVDFVwVQkugLVQFCHBEJ3KuA4tcm%2b5JR1iNc%3d&risl=&pid=ImgRaw&r=0");
+	font-family: "Helvetica", Sans-Serif;
+	margin: 0;
+	padding: 0;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+heading {
+	font-family: 'Bebas Neue', sans-serif;
+	background-color: #eaeaea;
+	display: grid;
+	text-align: center;
+	font-size: 50;
+	color: #ff6f61;
+	height: 60px;
+}
+
+main {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 30px;
+  background-color: #eaeaea;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  width: 50%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.form-group {
+  display: flex;
+  align-items: baseline; /* Aligns checkbox with the text baseline */
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.form-group input[type="checkbox"] {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  transform: translateY(1px); /* Slight vertical adjustment */
+}
+
+.custom-select {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  appearance: none; /* Removes default arrow in some browsers */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.custom-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+

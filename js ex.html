@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation with Loop</title>
+<style>
+  .error {
+    border: 2px solid red;
+  }
+</style>
+</head>
+<body>
+<h2>Registration Form</h2>
+ 
+<form id="registrationForm">
+  <label>First Name:</label>
+  <input type="text" name="firstname"><br><br>
+ 
+  <label>Last Name:</label>
+  <input type="text" name="lastname"><br><br>
+ 
+  <label>Email:</label>
+  <input type="email" name="email"><br><br>
+ 
+  <label>Age:</label>
+  <input type="number" name="age"><br><br>
+ 
+  <button type="button" onclick="validateForm()">Submit</button>
+</form>
+ 
+<p id="errorMsg" style="color: red;"></p>
+ 
+<script>
+  function validateForm() {
+    const form = document.getElementById("registrationForm");
+    const inputs = form.querySelectorAll("input");
+    let allFilled = true;
+ 
+    // Clear previous styles and message
+    document.getElementById("errorMsg").innerText = "";
+    inputs.forEach(input => input.classList.remove("error"));
+ 
+ 
+    // Loop to check each field
+    for (let i = 0; i < inputs.length; i++) {
+       if (inputs[i].value.trim() === "") {
+        inputs[i].classList.add("error");
+         allFilled = false;
+       }
+    }
+ 
+     if (!allFilled) {
+      document.getElementById("errorMsg").innerText = "Please fill out all fields.";
+     } else {
+       alert("Form submitted successfully!");
+       form.reset();
+    }
+  }
+</script>
+</body>
+</html>
+ 

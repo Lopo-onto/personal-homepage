@@ -1,0 +1,200 @@
+<html>
+<head>
+    <title>
+        Resume
+    </title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Carlito&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Carlito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background-image: url('https://wallpapercave.com/wp/wp3347873.png');
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 595px; 
+            aspect-ratio: 210 / 297; 
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid black;
+            background-color: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+        main h3 {
+            margin-bottom: 0.5rem;
+        }
+        main img {
+            display: block;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            border: 2px solid #333;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 2rem; 
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+
+        .profile .info h3 {
+            margin: 0.3rem 0;
+        }
+
+        .section {
+            margin-top: 2rem;
+        }
+
+        .section h2 {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .section ul {
+            padding-left: 1.2rem;
+        }
+
+        .section p, .section li {
+            margin: 0.3rem 0;
+        }
+        .two-column {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .two-column .section {
+            flex: 1 1 45%;
+        }
+        @media (max-width: 768px) {
+            .two-column {
+                flex-direction: column;
+            }
+
+            .two-column .section {
+                flex: 1 1 100%;
+            }
+
+            .profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile .info h3 {
+                text-align: center;
+            }
+        }
+            a.next{
+				text-decoration: none;
+    			color: inherit;
+				background-color: blue;
+				color: white;
+				padding: 15px;
+			}
+			a.next:hover{
+				background-color: rgb(8, 8, 167);
+			}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="profile">
+            <img src="proff.png" alt="resume pic"> 
+            <div class="info">
+                <h3 align="center">Profile</h3>
+                <hr>
+                <h3>Name: Yexelnathan Sy</h3>
+                <h3>Cellphone Number: 09193802551</h3>
+                <h3>Email: lopoonto@gmail.com</h3>
+                <h3>Address: Binondo, Manila</h3>
+            </div>
+        </main>
+<div class="two-column">
+    <section class="section">
+        <h2>Objective</h2>
+        <p align="justify">To obtain a position where I can apply my skills and grow professionally while contributing to the success of the organization.</p>
+    </section>
+
+    <section class="section">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>College</strong> - FEU Institute of Technology (2024-Current)</li>
+            <li><strong>Senior High School</strong> – Chiang Kai Shek College (2022–2024)</li>
+            <li><strong>Junior High School</strong> – Chiang Kai Shek College (2018–2022)</li>
+        </ul>
+    </section>
+</div>
+
+<div class="two-column">
+    <section class="section">
+        
+        <h2>Personal Skills</h2>
+        <ul>
+            <li>Communication and teamwork</li>
+            <li>Problem-solving</li>
+            <li>Time management</li>
+            <li>Ability to work independently or as part of a team</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Basic HTML, CSS</li>
+            <li>Intermediate C++ Programming</li>
+        </ul>
+    </section>
+</div>
+
+<div class="two-column">
+    <section class="section">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Personal Portfolio Website</strong> – Built using HTML and CSS</li>
+            <li><strong>Simple Calculator in C++</strong> – Demonstrated basic programming logic</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Languages</h2>
+        <ul>
+            <li>English – Fluent</li>
+            <li>Filipino – Native</li>
+            <li>Mandarin – Basic</li>
+            <li>Hokkien – Basic</li>
+        </ul>
+    </section>
+</div>
+
+</div>
+<a href="index.html" class="next"><---Go back to My Projects</a>
+</body>
+</html>

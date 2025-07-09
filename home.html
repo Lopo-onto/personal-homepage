@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - My Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="loader"></div>
+  <header>
+    <div class="container">
+      <h1>Homepage</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="index.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <label for="bgColorPicker" class="custom-color-label">🎨 Pick a Background Color</label>
+    <input type="color" id="bgColorPicker" onchange="changeBackgroundColor()" style="display: none;">
+
+    <section class="fade-section">
+      <h2>Welcome!</h2>
+      <p>Hello👋, and welcome to my personal website. Here, you can learn more about me, my projects, and how to get in touch.</p>
+      <p>Feel free to explore the different sections and get to know more about what I do and my interests.</p>
+      <p>Currently learning to design a website using HTML, CSS, and JavaScript.</p>
+      <img src="welcome.gif" alt="css" class="css">
+    </section>
+    <section class="fade-section">
+      <h2>Quick Links</h2>
+      <ul>
+        <li class="quickb"><a href="index.html" class="quick">About Me</a></li>
+        <li class="quickb"><a href="contact.html" class="quick">Contact</a></li>
+      </ul>
+      
+
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

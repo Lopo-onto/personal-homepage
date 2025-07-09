@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Repeat Form Using While Loop</title>
+</head>
+<body>
+<h2>Survey Form</h2>
+<p>Open the browser prompt to fill multiple times.</p>
+<button onclick="startSurvey()">Start Survey</button>
+ 
+<script>
+  function startSurvey() {
+    let continueFilling = true;
+ 
+    while (continueFilling) {
+       // Collect input using prompt dialogs
+       let name = prompt("What is your name?");
+       if (!name) break;
+ 
+       let age = prompt("How old are you?");
+       if (!age) break;
+ 
+       let email = prompt("What is your email?");
+       if (!email) break;
+ 
+       alert(`Thank you, ${name}! Your data was submitted.`);
+ 
+       // Ask if they want to do it again
+       let answer = prompt("Would you like to fill out another form? (yes/no)").toLowerCase();
+ 
+       // Exit the loop if user types "no" or clicks Cancel
+       if (answer !== "yes") {
+         continueFilling = false;
+         alert("Thank you for participating!");
+       }
+     }
+  }
+</script>
+</body>
+</html>

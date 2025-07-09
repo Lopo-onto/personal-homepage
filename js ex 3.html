@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Me Form with Loop</title>
+<style>
+  .error {
+    border: 2px solid red;
+  }
+</style>
+</head>
+<body>
+<h2>Contact Me</h2>
+ 
+<form id="contactForm">
+  <label for="name">Name:</label><br>
+  <input type="text" name="contactField" id="name"><br><br>
+ 
+  <label for="email">Email:</label><br>
+  <input type="email" name="contactField" id="email"><br><br>
+ 
+  <label for="message">Message:</label><br>
+  <textarea name="contactField" id="message"></textarea><br><br>
+ 
+  <button type="button" onclick="validateContactForm()">Send Message</button>
+</form>
+ 
+<p id="feedback" style="color:red;"></p>
+ 
+<script>
+  function validateContactForm() {
+    const form = document.getElementById('contactForm');
+    const fields = form.querySelectorAll('[name="contactField"]');
+    let allFilled = true;
+ 
+    document.getElementById("feedback").innerText = "";
+    fields.forEach(field => field.classList.remove("error"));
+ 
+    // Loop through each form field
+     for (let i = 0; i < fields.length; i++) {
+       if (fields[i].value.trim() === "") {
+        fields[i].classList.add("error");
+         allFilled = false;
+       }
+     }
+ 
+     if (!allFilled) {
+      document.getElementById("feedback").innerText = "Please fill out all fields.";
+     } else {
+      document.getElementById("feedback").style.color = "green";
+      document.getElementById("feedback").innerText = "Your message has been sent!";
+       form.reset();
+    }
+  }
+</script>
+</body>
+</html>
+ 
